@@ -1,0 +1,48 @@
+name: Hardware compatibility report
+description: Report a display, board, peripheral or GPU adapter result
+title: "[Hardware] "
+labels: ["hardware"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share only the minimum sanitized model identifiers needed for matching.
+        Do not include serial numbers, UUIDs, usernames, VPS data or credentials.
+  - type: input
+    id: platform
+    attributes:
+      label: Laptop / motherboard family
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU model
+  - type: input
+    id: display
+    attributes:
+      label: Display / transport
+  - type: input
+    id: peripheral
+    attributes:
+      label: Peripheral and PID
+  - type: textarea
+    id: detection
+    attributes:
+      label: LocalDeck capability result
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Read-only evidence and limitations
+      description: Describe read-back, unsupported controls and recovery if applicable.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: This report contains no credentials, proxy endpoints or unique machine identifiers.
+          required: true

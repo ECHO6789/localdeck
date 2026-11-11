@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/ECHO6789/localdeck/security/advisories/new
+    about: Report credentials, privacy exposure or unsafe hardware behavior privately.

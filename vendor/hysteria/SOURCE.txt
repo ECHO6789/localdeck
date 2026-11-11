@@ -1,0 +1,20 @@
+Hysteria2 client engine bundled with LocalDeck
+================================================
+
+Project: Hysteria
+Upstream: https://github.com/HyNetworks/hysteria
+Legacy URL: https://github.com/apernet/hysteria
+Version: app/v2.13.0
+Commit: ca8fbd874fd6ca82413948de6dc5924405e103e1
+Artifact: hysteria-windows-amd64.exe
+Upstream artifact SHA256:
+162ef8fe55dc7ec810dda662908f8e65ec36bd6da39cb87c3bd66184ab68f067
+License: MIT, see LICENSE.md
+
+LocalDeck runs this binary only in client mode with update checks disabled. The
+binary listens on a dynamically allocated 127.0.0.1 SOCKS5 port and is stopped
+when the LocalDeck proxy stops. It is not installed system-wide and does not
+replace the existing mixed HTTP/SOCKS5 proxy or routing rules.
+
+The official artifact hash was verified against the upstream release
+hashes.txt before it was added to this repository.

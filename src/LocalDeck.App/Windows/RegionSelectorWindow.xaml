@@ -1,0 +1,33 @@
+<Window x:Class="LocalDeck.App.Windows.RegionSelectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="选择截图区域"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Topmost="True"
+        Background="Black"
+        Cursor="Cross">
+    <Grid x:Name="Root">
+        <Image x:Name="ScreenImage" Stretch="Fill" />
+        <Rectangle Fill="#66000000" />
+        <Canvas>
+            <Rectangle x:Name="SelectionRectangle"
+                       Stroke="#61E7B8"
+                       StrokeThickness="2"
+                       Fill="#1A61E7B8"
+                       Visibility="Collapsed" />
+            <Border x:Name="Hint"
+                    Background="#DD10151D"
+                    CornerRadius="10"
+                    Padding="16,10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Margin="0,24,0,0">
+                <TextBlock Text="拖动选择区域 · Esc 取消"
+                           Foreground="#F5F7FA"
+                           FontSize="14" />
+            </Border>
+        </Canvas>
+    </Grid>
+</Window>

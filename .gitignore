@@ -1,0 +1,42 @@
+# Build output
+**/bin/
+**/obj/
+**/artifacts/
+**/TestResults/
+
+# Frontend dependencies and generated desktop assets
+frontend/node_modules/
+frontend/dist/
+src/LocalDeck.App/wwwroot/
+
+# Local machine state
+*.user
+*.suo
+.vs/
+.idea/
+.vscode/
+*.log
+*.db
+*.db-shm
+*.db-wal
+.env
+.env.*
+*.pem
+*.pfx
+*.key
+*.part
+
+# Never commit proxy credentials or generated runtime configuration
+**/settings.json
+**/active.yaml
+**/imported-clash.yaml
+**/profiles/*.yaml
+**/hysteria/*.yaml
+**/capabilities.json
+**/installations.json
+
+# Packaged release assets
+*.zip
+
+# Local verification screenshots and scratch files
+work/

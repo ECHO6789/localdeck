@@ -1,0 +1,63 @@
+name: Bug report
+description: Report a reproducible LocalDeck defect
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Remove usernames, hostnames, serial numbers, proxy servers, subscription
+        URLs, credentials and clipboard contents before posting logs.
+  - type: input
+    id: version
+    attributes:
+      label: LocalDeck version
+      placeholder: 0.9.0
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version and build
+      placeholder: Windows 11 26100
+    validations:
+      required: true
+  - type: dropdown
+    id: plugin
+    attributes:
+      label: Plugin pack
+      options:
+        - Core
+        - Hardware
+        - System tools
+        - Automation
+        - AI workbench
+        - Game enhancements
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      placeholder: Describe the shortest reliable sequence.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed proxy credentials, VPS addresses, subscriptions, personal paths and device identifiers.
+          required: true

@@ -1,0 +1,30 @@
+name: build
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: npm ci --prefix frontend
+      - run: npm run build --prefix frontend
+      - run: dotnet build src/LocalDeck.App/LocalDeck.App.csproj -c Release
+      - run: dotnet build tools/LocalDeck.Diagnostics/LocalDeck.Diagnostics.csproj -c Release
+      - run: powershell -NoProfile -ExecutionPolicy Bypass -File scripts/detect-capabilities.ps1 -OutFile "$env:RUNNER_TEMP\capabilities.json"
+      - run: dotnet run --project tools/LocalDeck.Diagnostics/LocalDeck.Diagnostics.csproj -c Release --no-build -- --plugin-smoke
