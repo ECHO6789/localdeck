@@ -38,16 +38,11 @@ but no VPS address, YAML, password, subscription URL or generated client config.
 
 The current files have been sanitized. Git history has not been rewritten.
 
-Before making the existing repository public, choose one of these options:
+The historical repository was retained as a separate private development
+repository. The public repository was initialized from a clean single-commit
+snapshot, so none of those older commits are part of public history.
 
-1. rewrite history and force-push after a backup;
-2. create a new clean public repository from the sanitized current tree;
-3. accept that the historical local path and node label will be public.
-
-LocalDeck's automated recommendation is option 2 unless preserving the current
-commit graph is required.
-
-Create a clean, history-free snapshot after committing the current tree:
+Create another clean, history-free snapshot after committing a future tree:
 
 ```powershell
 pwsh -NoProfile -File scripts/create-public-snapshot.ps1
@@ -114,9 +109,6 @@ Relevant upstream licenses are recorded in
 
 ## Repository Status
 
-The repository is still private at the time of this audit. No visibility change
-was performed automatically.
-
-Current-tree README and project documentation are ready for a public snapshot.
-The historical-path decision above must be made before toggling repository
-visibility.
+This public repository contains one initial source commit. The historical
+development graph is not published. Current-tree README and project
+documentation were reviewed before the public snapshot was created.
